@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="webpagestyling.css"/>
+<title>XML Gyak</title>
+
+<script>  
+    function load_oprendszer() {
+    document.getElementById("display").innerHTML='<object type="text/html" data="oprendszer.html" ></object>';
+    }
+    function load_statistics() {
+    document.getElementById("display1").innerHTML='<object type="text/html" data="Statisztika.html" ></object>';
+    }
+    function load_OOP() {
+    document.getElementById("display2").innerHTML='<object type="text/html" data="OOP.html" ></object>';
+    }
+</script>
+    
+</head>
+<body class="body">
+
+    <center>      
+        <h1>XML Gyak</h1>
+    </center>
+      
+    <div class="link-container">
+        <a href="index.html" class="img">
+            <img src="images/infoep.jpg" alt="Informatika épület" style="margin-left: auto;
+            margin-right: auto; width: 15%;
+            height: 15%;">
+    </a>
+    </div>
+   
+    <main>
+
+        <table class="table">
+            <tr>
+                <td class="td"> 
+                    <a href="#" onclick="load_oprendszer()">
+                        Operating Systems
+                    </a>
+                </td>
+
+                <td class="td"> 
+                    <a href="#" onclick="load_statistics()">
+                        Statistics
+                    </a>
+                </td>
+
+                <td class="td">
+                    <a href="#" onclick="load_OOP()">
+                        OOP Programming
+                    </a>
+                </td>
+            </tr>
+        </table>
+
+        
+        <table class="displaytable">
+            <tr>                
+                <td id="display" class="displaytd">
+    
+                </td>
+
+                <td id="display1" class="displaytd">
+    
+                </td>
+
+                <td id="display2" class="displaytd">
+    
+                </td>
+
+            </tr>
+        </table>
+       
+
+    </main>
+    
+</body>
+</html>
