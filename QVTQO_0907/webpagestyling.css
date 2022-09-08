@@ -48,14 +48,12 @@ body
         margin-top: 15px;
         border-collapse: collapse;
         width: 100%;
-        border:5px azure solid;
 
     }
 
     .displaytd
     {
-        width:33.3%;
-        border:5px azure solid;
+        width:33.3%;     
         height:600px;
     }
 
