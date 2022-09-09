@@ -3,19 +3,7 @@
 <head>
 <link rel="stylesheet" type="text/css" href="webpagestyling.css"/>
 <title>XML Gyak</title>
-
-<script>  
-    function load_oprendszer() {
-    document.getElementById("display").innerHTML='<object type="text/html" data="oprendszer.html" ></object>';
-    }
-    function load_statistics() {
-    document.getElementById("display1").innerHTML='<object type="text/html" data="Statisztika.html" ></object>';
-    }
-    function load_OOP() {
-    document.getElementById("display2").innerHTML='<object type="text/html" data="OOP.html" ></object>';
-    }
-</script>
-    
+ 
 </head>
 <body class="body">
 
@@ -36,19 +24,19 @@
         <table class="table">
             <tr>
                 <td class="td"> 
-                    <a href="#" onclick="load_oprendszer()">
+                    <a href="oprendszer.html" target="display">
                         Operating Systems
                     </a>
                 </td>
 
                 <td class="td"> 
-                    <a href="#" onclick="load_statistics()">
+                    <a href="Statisztika.html" target="display">
                         Statistics
                     </a>
                 </td>
 
                 <td class="td">
-                    <a href="#" onclick="load_OOP()">
+                    <a href="OOP.html" target="display">
                         OOP Programming
                     </a>
                 </td>
@@ -56,22 +44,9 @@
         </table>
 
         
-        <table class="displaytable">
-            <tr>                
-                <td id="display" class="displaytd">
-    
-                </td>
-
-                <td id="display1" class="displaytd">
-    
-                </td>
-
-                <td id="display2" class="displaytd">
-    
-                </td>
-
-            </tr>
-        </table>
+        <iframe src="iframecontent.html" name="display" class="displayframe" style="border:none;">
+            
+        </iframe>
        
 
     </main>

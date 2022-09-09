@@ -43,18 +43,12 @@ body
         text-align: center;
     }
 
-    .displaytable
+    .displayframe
     {
-        margin-top: 15px;
-        border-collapse: collapse;
+        margin-top: 25px;
         width: 100%;
+        height: 590px;
 
-    }
-
-    .displaytd
-    {
-        width:33.3%;     
-        height:600px;
     }
 
     .link-container
@@ -63,3 +57,9 @@ body
         text-align: center;
     }
     
+    p
+    {
+        font-size:25px;
+        color:azure;
+        font-family: 'Courier New', monospace;
+    }
