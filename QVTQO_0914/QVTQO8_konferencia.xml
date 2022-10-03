@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<konferencia>
+    <cím>Mit keresk én itt?</cím>
+    <hallgatók>
+        <hallgató>
+            <név>Bartók-Balogh Gábor</név>
+            <lakcím>3121 Nemtudom Utca 23.</lakcím>
+        </hallgató>
+    </hallgatók>
+    <helyszín>Miskolc Egyetemváros</helyszín>
+    <előadó>
+        <név>Megtanít Alak</név>
+        <adószám>789234789KK</adószám>
+        <lakcím>4322 Ott Ahol út. 98.</lakcím>    
+    </előadó>
+    <dátum>2005.09.12</dátum>
+</konferencia>
