@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE BG_adatbazis SYSTEM "BG_adatbazis.dtd">
+ 
+<BG_adatbazis>
+
+  <dolgozo kod="egy">
+    <nev>Hopp Popp</nev>
+    <fizetes>130000</fizetes>
+  </dolgozo>
+  
+  <dolgozo kod="ketto">
+    <nev>Korpás Horpás</nev>
+    <fizetes>184000</fizetes>
+  </dolgozo>
+  
+  <dolgozo kod="harom">
+    <nev>Verem Merem</nev>
+    <fizetes>200120</fizetes>
+  </dolgozo>
+  
+  <dolgozo kod="negy">
+    <nev>Csekk Mekk</nev>
+    <fizetes>340000</fizetes>
+  </dolgozo>
+ 
+</BG_adatbazis>

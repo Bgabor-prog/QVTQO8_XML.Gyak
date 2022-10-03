@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<BG_kurzusfelvetel tanev="22/23 I.Felev" egyetem="ME">
+
+    <Hallgato>
+        <nev>Bartók-Balogh Gábor</nev>
+        <szul>200-11-20</szul>
+        <szak evf="5">Programtervező informatikus</szak>
+    </Hallgato>
+
+    <Kurzusok>
+        <Kurzus id="GEIAL332-B">
+            <nev> Adatkezelés XML-ben</nev>
+            <kredit>5</kredit>
+            <hely>XXXII.</hely>
+            <idopont>Kedd 12:00-14:00</idopont>
+            <oktato>Bednarik László</oktato>        
+        </Kurzus>
+
+        <kurzus id="GEIAK130-B">
+            <nev>Vállalat és Inf. rendszerek fejlesztése</nev>
+            <kredit>5</kredit>
+            <hely>Infotanszek 103. terem</hely>
+            <idopont>Szerda 16:00-20:00</idopont>
+            <oktato>Dr.Sasvári Péter</oktato>
+        </kurzus>
+
+        <kurzus id="GEIAL331-B">
+            <nev>Webtechnológiák</nev>
+            <kredit>5</kredit>
+            <hely>XXX.</hely>
+            <idopont>Hétfő 8:00-10:00</idopont>
+            <oktato>Agárdi Anita</oktato>
+        </kurzus>
+    </Kurzusok>
+
+</BG_kurzusfelvetel>
