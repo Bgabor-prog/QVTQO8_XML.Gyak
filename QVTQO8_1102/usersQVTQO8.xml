@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Users>
+
+    <user id="1">
+        <firstname>Gábor</firstname>
+        <lastname>Bartók</lastname>
+        <profession>CEO</profession>
+    </user>
+
+    <user id="2">
+        <firstname>Kristóf</firstname>
+        <lastname>Hegyesi</lastname>
+        <profession>Kukás</profession>
+    </user>
+
+    <user id="3">
+        <firstname>Marcell</firstname>
+        <lastname>Juhász</lastname>
+        <profession>Eladó</profession>
+    </user>
+</Users>
