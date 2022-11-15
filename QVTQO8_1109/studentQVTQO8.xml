@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<class>
+    <student id="01">
+        <keresztnev>Kristof</keresztnev>
+        <vezeteknev>Hegyesi</vezeteknev>
+        <becenev>Dagi</becenev>
+        <kor>69</kor>
+    </student>
+
+    <student id="02">
+        <keresztnev>Marcell</keresztnev>
+        <vezeteknev>Juhász</vezeteknev>
+        <becenev>Szépség</becenev>
+        <kor>30</kor>
+    </student>
+
+    <student id="03">
+        <keresztnev>Gábor</keresztnev>
+        <vezeteknev>Bartók</vezeteknev>
+        <becenev>Király</becenev>
+        <kor>22</kor>
+    </student>
+</class>
