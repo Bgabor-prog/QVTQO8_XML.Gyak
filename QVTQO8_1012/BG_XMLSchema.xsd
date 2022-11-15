@@ -1,0 +1,25 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="vendeglatas">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="etterem" type="etteremTipus" maxOccurs="unbounded"/>
+                <xs:element name="etterem" type="foszakacsTipus" maxOccurs="unbounded"/>
+                <xs:element name="etterem" type="szakacsTipus" maxOccurs="unbounded"/>
+                <xs:element name="etterem" type="gyakornokTipus" maxOccurs="unbounded"/>
+                <xs:element name="etterem" type="vendegTipus" maxOccurs="unbounded"/>
+                <xs:element name="etterem" type="rendelesTipus" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+
+        <xs:key name="etterem_kulcs">
+            <xs:selector xpath="etterem"></xs:selector>
+            <xs:field xpath="@ekod"></xs:field>
+        </xs:key>
+
+        <xs:keyref refer="etterem_kulcs" name="etterem_foszakacs_idegen_kulcs">
+            <xs:selector xpath="foszakacs"></xs:selector>
+            <xs:field xpath="@"></xs:field>
+        </xs:keyref>
+
+    </xs:element>
+</xs:schema>
