@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Tulaj">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" name="Konyveloiroda">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="szekhely">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="irszam" type="xs:string" />
+                    <xs:element name="hazszam" type="xs:string" />
+                    <xs:element name="utca" type="xs:string" />
+                    <xs:element name="varos" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="ugyvezeto" type="xs:string" />
+            </xs:sequence>
+            <xs:attribute name="k_adoszam" type="xs:string" use="required" />
+          </xs:complexType>
+        </xs:element>
+        <xs:element maxOccurs="unbounded" name="Ceg">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="email" type="xs:string" />
+              <xs:element name="szekhely" type="xs:string" />
+              <xs:element name="alapitas_eve" type="xs:string" />
+            </xs:sequence>
+            <xs:attribute name="nev" type="xs:string" use="required" />
+            <xs:attribute name="u_c" type="xs:string" use="required" />
+          </xs:complexType>
+        </xs:element>
+        <xs:element maxOccurs="unbounded" name="Ugyfelek">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="nev" type="xs:string" />
+              <xs:element name="email" type="xs:string" />
+              <xs:element name="lakcim">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="irszam" type="xs:string" />
+                    <xs:element name="hazszam" type="xs:string" />
+                    <xs:element name="utca" type="xs:string" />
+                    <xs:element name="varos" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="u_adoazonosito" type="xs:string" use="required" />
+            <xs:attribute name="k_u" type="xs:string" use="required" />
+          </xs:complexType>
+        </xs:element>
+        <xs:element maxOccurs="unbounded" name="Nav">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="email" type="xs:string" />
+              <xs:element name="ugyintezo">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="email" type="xs:string" />
+                    <xs:element name="telefon" type="xs:string" />
+                    <xs:element name="nev" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="nyitvatartas">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="tol" type="xs:string" />
+                    <xs:element name="ig" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="n_adoszam" type="xs:string" use="required" />
+            <xs:attribute name="k_n" type="xs:string" use="required" />
+          </xs:complexType>
+        </xs:element>
+        <xs:element maxOccurs="unbounded" name="Oep">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="email" type="xs:string" />
+              <xs:element name="ugyintezo">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="email" type="xs:string" />
+                    <xs:element name="telefon" type="xs:string" />
+                    <xs:element name="nev" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="nyitvatartas">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="tol" type="xs:string" />
+                    <xs:element name="ig" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="o_adoszam" type="xs:string" use="required" />
+            <xs:attribute name="k_o" type="xs:string" use="required" />
+          </xs:complexType>
+        </xs:element>
+        <xs:element maxOccurs="unbounded" name="Onkormanyzat">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="email" type="xs:string" />
+              <xs:element name="ugyintezo">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="email" type="xs:string" />
+                    <xs:element name="telefon" type="xs:string" />
+                    <xs:element name="nev" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="nyitvatartas">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="tol" type="xs:string" />
+                    <xs:element name="ig" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="on_adoszam" type="xs:string" use="required" />
+          </xs:complexType>
+        </xs:element>
+        <xs:element maxOccurs="unbounded" name="Konyv_Onk">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="dok.id" type="xs:string" />
+              <xs:element name="dok.szam" type="xs:string" />
+            </xs:sequence>
+            <xs:attribute name="k_on" type="xs:string" use="required" />
+            <xs:attribute name="k_k" type="xs:string" use="required" />
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+
+        <!-- 
+            Konyvelo iroda primary key majd foreign kapcsolatok kialakítása
+         -->
+        <xs:key name="Konyveliroda_kulcs">
+            <xs:selector xpath="Konyveloiroda"></xs:selector>
+            <xs:field xpath="@k_adoszam"></xs:field>
+        </xs:key>
+
+        <xs:keyref refer="Konyveliroda_kulcs" name="könyveloiroda_ceg_f_key">
+            <xs:selector xpath="Ceg"></xs:selector>
+            <xs:field xpath="@u_c"></xs:field>
+        </xs:keyref>
+
+        <xs:keyref refer="Konyveliroda_kulcs" name="könyveloiroda_ugyfel_f_key">
+            <xs:selector xpath="Ugyfelek"></xs:selector>
+            <xs:field xpath="@k_u"></xs:field>
+        </xs:keyref>
+
+        <xs:keyref refer="Konyveliroda_kulcs" name="könyveloiroda_nav_f_key">
+            <xs:selector xpath="Nav"></xs:selector>
+            <xs:field xpath="@k_n"></xs:field>
+        </xs:keyref>
+
+        <xs:keyref refer="Konyveliroda_kulcs" name="könyveloiroda_oep_f_key">
+            <xs:selector xpath="Oep"></xs:selector>
+            <xs:field xpath="@k_o"></xs:field>
+        </xs:keyref>
+
+        <!-- 
+            Konyveloiroda és az onkormányzat közötti tobb-tobb kapcs. kialakítása
+         -->
+        <xs:key name="Onkormanyzat_kulcs">
+            <xs:selector xpath="Onkormanyzat"></xs:selector>
+            <xs:field xpath="@on_adoszam"></xs:field>
+        </xs:key>
+
+        <xs:keyref refer="Onkormanyzat_kulcs" name="Onkormanyzat_konyveloiroda_f_key">
+            <xs:selector xpath="Konyv_Onk"></xs:selector>
+            <xs:field xpath="@k_on"></xs:field>
+        </xs:keyref>
+
+        <xs:keyref refer="Konyveliroda_kulcs" name="könyveloiroda_onkormanyzat_f_key">
+            <xs:selector xpath="Konyv_Onk"></xs:selector>
+            <xs:field xpath="@k_k"></xs:field>
+        </xs:keyref>
+
+
+  </xs:element>
+</xs:schema>
