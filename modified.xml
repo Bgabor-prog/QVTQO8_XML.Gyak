@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Tulaj>
+        <!-- 
+        Konyveloirodak
+     -->
+        <Konyveloiroda k_adoszam="k1">
+                <szekhely>
+                        <irszam>2673</irszam>
+                        <hazszam>55</hazszam>
+                        <utca>Abla</utca>
+                        <varos>Pingalo</varos>
+                </szekhely>
+                <ugyvezeto>Vigaldi Béla</ugyvezeto>
+        </Konyveloiroda>
+        <Konyveloiroda k_adoszam="k2">
+                <szekhely>
+                        <irszam>2345</irszam>
+                        <hazszam>21</hazszam>
+                        <utca>Abla</utca>
+                        <varos>Eifengel</varos>
+                </szekhely>
+                <ugyvezeto> Pakula Anna </ugyvezeto>
+        </Konyveloiroda>
+        <Konyveloiroda k_adoszam="k3">
+                <szekhely>
+                        <irszam>8654</irszam>
+                        <hazszam>81</hazszam>
+                        <utca>Abla</utca>
+                        <varos>Spank</varos>
+                </szekhely>
+                <ugyvezeto>Dekt Elek</ugyvezeto>
+        </Konyveloiroda>
+        <!-- 
+        Cegek
+     -->
+        <Ceg nev="egy" u_c="k1">
+                <email>cegecske@portal.hu</email>
+                <szekhely>Karácsony</szekhely>
+                <alapitas_eve>1144</alapitas_eve>
+        </Ceg>
+        <Ceg nev="ketto" u_c="k2">
+                <email>kapucsinalo@portal.hu</email>
+                <szekhely>Husvet</szekhely>
+                <alapitas_eve>1450</alapitas_eve>
+        </Ceg>
+        <Ceg nev="harom" u_c="k3">
+                <email>lakatos@portal.hu</email>
+                <szekhely>Ujev</szekhely>
+                <alapitas_eve>1888</alapitas_eve>
+        </Ceg>
+        <!-- 
+        Ugyfelek
+     -->
+        <Ugyfelek k_u="k1" u_adoazonosito="u1">
+                <nev>Higo Hugo</nev>
+                <email>asdasd@vaefl.hu</email>
+                <lakcim>
+                        <irszam>8431</irszam>
+                        <hazszam>515</hazszam>
+                        <utca>Hajgu</utca>
+                        <varos>Vabuga</varos>
+                </lakcim>
+        </Ugyfelek>
+        <Ugyfelek k_u="k2" u_adoazonosito="ua2">
+                <nev>Verdes Elek</nev>
+                <email>hagusfa@gmail.com</email>
+                <lakcim>
+                        <irszam>1020</irszam>
+                        <hazszam>11</hazszam>
+                        <utca>Pecsét</utca>
+                        <varos>Irat</varos>
+                </lakcim>
+        </Ugyfelek>
+        <Ugyfelek k_u="k3" u_adoazonosito="u3">
+                <nev>Paktum Patrik</nev>
+                <email>ppatrik@freemail.com</email>
+                <lakcim>
+                        <irszam>6723</irszam>
+                        <hazszam>25</hazszam>
+                        <utca>Derped</utca>
+                        <varos>Rekedt</varos>
+                </lakcim>
+                <telefonszam>06205672543</telefonszam>
+        </Ugyfelek>
+        <!-- 
+        Nav
+     -->
+        <Nav k_n="k1" n_adoszam="n1">
+                <email>idekuld@nav.hu</email>
+                <ugyintezo>
+                        <telefon>06304672056</telefon>
+                        <nev>Galamb Eszter</nev>
+                        <uemail>esztikeh@nav.hu</uemail>
+                </ugyintezo>
+                <nyitvatartas>
+                        <tol>8:00</tol>
+                        <ig>12:00</ig>
+                </nyitvatartas>
+        </Nav>
+        <Nav k_n="k1" n_adoszam="n2">
+                <email>idekuld@nav.hu</email>
+                <ugyintezo>
+                        <telefon>06304623656</telefon>
+                        <nev>Vad Péter</nev>
+                        <uemail>pistikehgh@nav.hu</uemail>
+                </ugyintezo>
+                <nyitvatartas>
+                        <tol>8:00</tol>
+                        <ig>12:00</ig>
+                </nyitvatartas>
+        </Nav>
+        <Nav k_n="k1" n_adoszam="n3">
+                <email>idekuld@nav.hu</email>
+                <ugyintezo>
+                        <telefon>06307353456</telefon>
+                        <nev>Emb Andrea</nev>
+                        <uemail>andikah@nav.hu</uemail>
+                </ugyintezo>
+                <nyitvatartas>
+                        <tol>8:00</tol>
+                        <ig>12:00</ig>
+                </nyitvatartas>
+        </Nav>
+        <!-- 
+        Oep
+     -->
+        <Oep k_o="k1" o_adoszam="o1">
+                <ugyintezo>
+                        <email>ronaldinho@oep.hu</email>
+                        <telefon>06705684050</telefon>
+                        <nev>Ricardo Ronaldinho</nev>
+                </ugyintezo>
+                <nyitvatartas>
+                        <tol>7:00</tol>
+                        <ig>16:00</ig>
+                </nyitvatartas>
+        </Oep>
+        <Oep k_o="k2" o_adoszam="o2">
+                <ugyintezo>
+                        <email>inez@oep.hu</email>
+                        <telefon>06707357246</telefon>
+                        <nev>Kardos Inez</nev>
+                </ugyintezo>
+                <nyitvatartas>
+                        <tol>7:00</tol>
+                        <ig>16:00</ig>
+                </nyitvatartas>
+        </Oep>
+        <Oep k_o="k3" o_adoszam="o3">
+                <ugyintezo>
+                        <email>hemb.sanyi@oep.hu</email>
+                        <telefon>06709741456</telefon>
+                        <nev>Hemb Sándor</nev>
+                </ugyintezo>
+                <nyitvatartas>
+                        <tol>7:00</tol>
+                        <ig>16:00</ig>
+                </nyitvatartas>
+        </Oep>
+        <!-- 
+        Onkormanyzatok
+     -->
+        <Onkormanyzat on_adoszam="on1">
+                <email>külddide@onk.hu</email>
+                <ugyintezo>
+                        <email>purhab@onk.hu</email>
+                        <telefon>06209782132</telefon>
+                        <nev>Pur Hab</nev>
+                </ugyintezo>
+                <nyitvatartas>
+                        <tol>9:00</tol>
+                        <ig>13:30</ig>
+                </nyitvatartas>
+        </Onkormanyzat>
+        <Onkormanyzat on_adoszam="on2">
+                <email>külddide@onk.hu</email>
+                <ugyintezo>
+                        <email>tali.cska@onk.hu</email>
+                        <telefon>06203145469</telefon>
+                        <nev>Tali Cska</nev>
+                </ugyintezo>
+                <nyitvatartas>
+                        <tol>9:00</tol>
+                        <ig>13:30</ig>
+                </nyitvatartas>
+        </Onkormanyzat>
+        <Onkormanyzat on_adoszam="on3">
+                <email>külddide@onk.hu</email>
+                <ugyintezo>
+                        <email>szekereszter@onk.hu</email>
+                        <telefon>06207132875</telefon>
+                        <nev>Szeker Eszter</nev>
+                </ugyintezo>
+                <nyitvatartas>
+                        <tol>9:00</tol>
+                        <ig>13:30</ig>
+                </nyitvatartas>
+        </Onkormanyzat>
+        <!-- 
+        Konyvelo iroda és az onkormányzat közötti több-több kapcsolat segéd példányai
+     -->
+        <Konyv_Onk k_k="k1" k_on="on1">
+                <dok.id>254123</dok.id>
+                <dok.szam>3</dok.szam>
+        </Konyv_Onk>
+        <Konyv_Onk k_k="k2" k_on="on2">
+                <dok.id>673773</dok.id>
+                <dok.szam>5</dok.szam>
+        </Konyv_Onk>
+        <Konyv_Onk k_k="k3" k_on="on3">
+                <dok.id>982515</dok.id>
+                <dok.szam>1</dok.szam>
+        </Konyv_Onk>
+</Tulaj>
