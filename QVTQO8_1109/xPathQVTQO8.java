@@ -25,7 +25,7 @@ public class xPathQVTQO8 {
             
             dBuilder = dbFactory.newDocumentBuilder();
             
-            Document document = dBuilder.parse("studentQVTQO8.xml");
+            Document document = dBuilder.parse("QVTQO8_XML.Gyak/QVTQO8_1109/studentQVTQO8.xml");
             
             document.getDocumentElement().normalize();
 
@@ -37,7 +37,7 @@ public class xPathQVTQO8 {
 
             for (int i = 0; i < nodeList.getLength(); i++) {
                 Node nNode = nodeList.item(i);
-                System.out.println("\nCurrent Element :" + nNode.getNodeName());
+                System.out.println("/nCurrent Element :" + nNode.getNodeName());
 
                 if (nNode.getNodeType() == Node.ELEMENT_NODE) {
                     Element eElement = (Element) nNode;
