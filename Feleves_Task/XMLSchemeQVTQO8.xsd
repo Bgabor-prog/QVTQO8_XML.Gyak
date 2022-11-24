@@ -155,40 +155,52 @@
   <xs:element name="keys">
       <!-- 
             Konyvelo iroda primary key majd foreign kapcsolatok kialakítása
-         -->
-         <xs:key name="Konyveliroda_kulcs">
+      -->
+
+      <!-- 
+        Elsodleges kulcsok
+       -->
+      <xs:key name="Konyveliroda_kulcs">
           <xs:selector xpath="Konyveloiroda"></xs:selector>
           <xs:field xpath="@k_adoszam"></xs:field>
       </xs:key>
 
-      <xs:keyref refer="Konyveliroda_kulcs" name="könyveloiroda_ceg_f_key">
-          <xs:selector xpath="Ceg"></xs:selector>
+      <xs:key name="Onkormanyzat_kulcs">
+          <xs:selector xpath="Onkormanyzat"></xs:selector>
+          <xs:field xpath="@on_adoszam"></xs:field>
+      </xs:key>
+
+      <xs:key name="Ugyfelek_kulcs">
+          <xs:selector xpath="Ugyfelek"></xs:selector>
+          <xs:field xpath="@u_adoazonosito"></xs:field>
+      </xs:key>
+
+      <!-- 
+        Idegen kulcsok
+       -->
+      <xs:keyref refer="Ugyfelek_kulcs" name="Ugyfelek_ceg_f_key">
+          <xs:selector xpath="Ugyfelek"></xs:selector>
           <xs:field xpath="@u_c"></xs:field>
       </xs:keyref>
 
       <xs:keyref refer="Konyveliroda_kulcs" name="könyveloiroda_ugyfel_f_key">
-          <xs:selector xpath="Ugyfelek"></xs:selector>
+          <xs:selector xpath="Konyveloiroda"></xs:selector>
           <xs:field xpath="@k_u"></xs:field>
       </xs:keyref>
 
       <xs:keyref refer="Konyveliroda_kulcs" name="könyveloiroda_nav_f_key">
-          <xs:selector xpath="Nav"></xs:selector>
+          <xs:selector xpath="Konyveloiroda"></xs:selector>
           <xs:field xpath="@k_n"></xs:field>
       </xs:keyref>
 
       <xs:keyref refer="Konyveliroda_kulcs" name="könyveloiroda_oep_f_key">
-          <xs:selector xpath="Oep"></xs:selector>
+          <xs:selector xpath="Konyveloiroda"></xs:selector>
           <xs:field xpath="@k_o"></xs:field>
       </xs:keyref>
 
       <!-- 
           Konyveloiroda és az onkormányzat közötti tobb-tobb kapcs. kialakítása
        -->
-      <xs:key name="Onkormanyzat_kulcs">
-          <xs:selector xpath="Onkormanyzat"></xs:selector>
-          <xs:field xpath="@on_adoszam"></xs:field>
-      </xs:key>
-
       <xs:keyref refer="Onkormanyzat_kulcs" name="Onkormanyzat_konyveloiroda_f_key">
           <xs:selector xpath="Konyv_Onk"></xs:selector>
           <xs:field xpath="@k_on"></xs:field>

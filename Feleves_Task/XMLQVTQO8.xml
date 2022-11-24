@@ -38,19 +38,19 @@
     <!-- 
         Cegek
      -->
-    <Ceg nev="egy" u_c="k1">
+    <Ceg nev="egy" u_c="u1">
         <email>cegecske@portal.hu</email>
         <szekhely>Karácsony</szekhely>
         <alapitas_eve>1144</alapitas_eve>
     </Ceg>
 
-    <Ceg nev="ketto" u_c="k2">
+    <Ceg nev="ketto" u_c="u2">
         <email>kapucsinalo@portal.hu</email>
         <szekhely>Husvet</szekhely>
         <alapitas_eve>1450</alapitas_eve>
     </Ceg>
 
-    <Ceg nev="harom" u_c="k3">
+    <Ceg nev="harom" u_c="u3">
         <email>lakatos@portal.hu</email>
         <szekhely>Ujev</szekhely>
         <alapitas_eve>1888</alapitas_eve>
