@@ -1,4 +1,4 @@
-package Feleves_Task.DOMParseQVTQO8;
+package hu.domparse.qvtqo8;
 
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.DocumentBuilder;
@@ -27,13 +27,11 @@ import org.xml.sax.SAXException;
 
 public class DOMModifyQVTQO8 {
 
-    private static final String FORMAT_XSLT = "C:/Users/Z004KHJR/source/repos/Egyetem/4.ev1.felev/Adatkezelés XML-ben/QVTQO8_XML.Gyak/QVTQO8_XML.Gyak/Feleves_Task/DOMParseQVTQO8/styling.xslt";
-
     public static void main(String argv[]) throws SAXException,
             IOException, ParserConfigurationException {
 
         File xmlFile = new File(
-                "C:/Users/Z004KHJR/source/repos/Egyetem/4.ev1.felev/Adatkezelés XML-ben/QVTQO8_XML.Gyak/FelevesTask/XMLQVTQO8.xml");
+                "./XMLQVTQO8.xml");
 
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder dBuilder = factory.newDocumentBuilder();
@@ -190,7 +188,7 @@ public class DOMModifyQVTQO8 {
 
 
         try (FileOutputStream output = new FileOutputStream(
-                "C:/Users/Z004KHJR/source/repos/Egyetem/4.ev1.felev/Adatkezelés XML-ben/QVTQO8_XML.Gyak/QVTQO8_XML.Gyak/modified.xml")) {
+                "modified.xml")) {
             writeXml(doc, output);
         } catch (TransformerException e) {
             e.printStackTrace();
@@ -220,7 +218,7 @@ public class DOMModifyQVTQO8 {
         TransformerFactory transformerFactory = TransformerFactory.newInstance();
 
         Transformer transformer = transformerFactory.newTransformer(
-                new StreamSource(new File(FORMAT_XSLT)));
+                new StreamSource(new File("DOMParseQVTQO8/styling.xslt")));
 
         transformer.setOutputProperty(OutputKeys.INDENT, "yes");
         transformer.setOutputProperty(OutputKeys.STANDALONE, "no");

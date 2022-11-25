@@ -1,4 +1,6 @@
-import java.io.File;
+package hu.domparse.qvtqo8;
+
+
 import java.io.IOException;
 
 import javax.xml.parsers.DocumentBuilderFactory;
