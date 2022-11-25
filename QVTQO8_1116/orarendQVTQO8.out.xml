@@ -1,0 +1,90 @@
+<!DOCTYPE HTML><html>
+    <h1>BG Órarend - 2022/23. I. félév.</h1>
+    <body>
+       <table border="1">
+          <tr>
+             <td>id</td>
+             <td>tipus</td>
+             <td>targy</td>
+             <td>nap</td>
+             <td>tol</td>
+             <td>ig</td>
+             <td>helyszin</td>
+             <td>oktato</td>
+             <td>szak</td>
+          </tr>
+          
+          <tr>
+             <td>o1</td>
+             <td>előadás</td>
+             <td>Web technológiák</td>
+             <td></td>
+             <td></td>
+             <td></td>
+             <td>A1/305</td>
+             <td>Agárdi Anita</td>
+             <td>Programtervező Informatikus</td>
+          </tr>
+
+          <tr>
+             <td>o2</td>
+             <td>gyakorlat</td>
+             <td>Web technológiák</td>
+             <td></td>
+             <td></td>
+             <td></td>
+             <td>in/103</td>
+             <td>Agárdi Anita</td>
+             <td>Programtervező Informatikus</td>
+          </tr>
+
+          <tr>
+             <td>o4</td>
+             <td>előadás</td>
+             <td>Adatkezelés XML-ben</td>
+             <td></td>
+             <td></td>
+             <td></td>
+             <td>A1/XXXII</td>
+             <td>Dr. Bednarik László</td>
+             <td>Programtervező Informatikus</td>
+          </tr>
+        
+          <tr>
+             <td>o8</td>
+             <td>gyakorlat</td>
+             <td>Adatkezelés XML-ben</td>
+             <td></td>
+             <td></td>
+             <td></td>
+             <td>In/101</td>
+             <td>Dr. Bednarik László</td>
+             <td>Programtervező Informatikus</td>
+          </tr>
+
+          <tr>
+             <td>o9</td>
+             <td>előadás</td>
+             <td>Vállalati információs rendszerek</td>
+             <td></td>
+             <td></td>
+             <td></td>
+             <td>In/103</td>
+             <td>Dr. Sasvári Péter</td>
+             <td>Programtervező Informatikus</td>
+          </tr>
+
+          <tr>
+             <td>o10</td>
+             <td>gyakorlat</td>
+             <td>Vállalati információs rendszerek</td>
+             <td></td>
+             <td></td>
+             <td></td>
+             <td>In/103</td>
+             <td>Dr. Sasvári Péter</td>
+             <td>Programtervező Informatikus</td>
+          </tr>
+       </table>
+    </body>
+ </html>
