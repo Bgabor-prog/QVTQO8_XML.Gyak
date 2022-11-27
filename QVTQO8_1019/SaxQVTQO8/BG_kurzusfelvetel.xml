@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<BG_kurzusfelvetel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="BG_kurzusfelvetel.xsd" tanev="2022/2023 I" egyetem="ME">
+  <hallgato id="QVTQO8">
+    <szulev>2000-01-27</szulev>
+    <hnev>Bartók-Balogh Gábor</hnev>
+    <szak evf="5">Programtervező informatikus</szak>
+  </hallgato>
+  <kurzusok>
+    <kurzus id="GEIAL331-B">
+      <kurzusnev>Web technológiák 1.</kurzusnev>
+      <kredit>5</kredit>
+      <hely>XXX</hely>
+      <idopont>Hétfő 08:00 - 10:00</idopont>
+      <oktato>Agárdi Anita</oktato>
+    </kurzus>
+    <kurzus id="GEIAL332-B">
+      <kurzusnev>Adatkezelés XML-ben</kurzusnev>
+      <kredit>5</kredit>
+      <hely>XXXII</hely>
+      <idopont>Kedd 12:00 - 14:00</idopont>
+      <oktato>Dr. Bednarik László</oktato>
+    </kurzus>
+    <kurzus id="GEIAL315-B">
+      <kurzusnev>Vállalati információs rendszerek</kurzusnev>
+      <kredit>5</kredit>
+      <hely>In/103 </hely>
+      <idopont>Szerda 16:00 - 18:00</idopont>
+      <oktato>Dr. Sasvári Péter</oktato>
+    </kurzus>
+  </kurzusok>
+</BG_kurzusfelvetel>

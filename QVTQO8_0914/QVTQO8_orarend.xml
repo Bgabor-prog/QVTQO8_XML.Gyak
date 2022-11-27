@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<B.G_orarend>
+    <ora id="1" tipus="Elmélet">
+        <targy>WebTech</targy>
+        <idopont>
+            <nap>Hetfő</nap>
+            <mettol>8</mettol>
+            <meddig>10</meddig>
+        </idopont>
+        <helyszin>Tanterem</helyszin>
+        <oktato>Agárdi Anita</oktato>
+        <szak>Programtervezo</szak>
+    </ora>
+    
+    <ora id="2" tipus="Gyakorlat">
+        <targy>WebTech</targy>
+        <idopont>
+            <nap>Hetfő</nap>
+            <mettol>4</mettol>
+            <meddig>6</meddig>
+        </idopont>
+        <helyszin>Tanterem</helyszin>
+        <oktato>Agárdi Anita</oktato>
+        <szak>Programtervezo</szak>
+    </ora>
+
+    <ora id="3" tipus="Elmélet">
+        <targy>AdatkXML-ben</targy>
+        <idopont>
+            <nap>Kedd</nap>
+            <mettol>12</mettol>
+            <meddig>14</meddig>
+        </idopont>
+        <helyszin>Tanterem</helyszin>
+        <oktato>Bednarik László</oktato>
+        <szak>Programtervezo</szak>
+    </ora>
+
+    <ora id="4" tipus="Gyakorlat">
+        <targy>AdatkXML-ben</targy>
+        <idopont>
+            <nap>Szerda</nap>
+            <mettol>12</mettol>
+            <meddig>14</meddig>
+        </idopont>
+        <helyszin>Tanterem</helyszin>
+        <oktato>Bednarik László</oktato>
+        <szak>Programtervezo</szak>
+    </ora>
+
+    <ora id="5" tipus="Elmélet">
+        <targy>Vállalati és Inf. rendsz.</targy>
+        <idopont>
+            <nap>Szerda</nap>
+            <mettol>16</mettol>
+            <meddig>18</meddig>
+        </idopont>
+        <helyszin>Tanterem</helyszin>
+        <oktato>Dr. Sárvári Péter</oktato>
+        <szak>Programtervezo</szak>
+    </ora>
+
+    <ora id="6" tipus="Gyakorlat">
+        <targy>Vállalati és Inf. rendsz.</targy>
+        <idopont>
+            <nap>Szerda</nap>
+            <mettol>18</mettol>
+            <meddig>20</meddig>
+        </idopont>
+        <helyszin>Tanterem</helyszin>
+        <oktato>Dr. Sárvári Péter</oktato>
+        <szak>Programtervezo</szak>
+    </ora>
+</B.G_orarend>

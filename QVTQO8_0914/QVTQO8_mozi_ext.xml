@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mozi>
+    <film id="txn_nxm_2jb" mufaj="horror">
+        <rendezo id="nzk_4xm_2jb" nev="alex"/>
+            <kor>50</kor>
+            <nemzetiseg>Amerikai</nemzetiseg>
+        <szinesz id="u5q_4xm_2jb" nev="Madison_Ivy"/>
+        <iro id="trv_4xm_2jb"/>
+            <kor>34</kor>
+            <nemzetiseg>Angol</nemzetiseg>   
+    </film>
+</mozi>
