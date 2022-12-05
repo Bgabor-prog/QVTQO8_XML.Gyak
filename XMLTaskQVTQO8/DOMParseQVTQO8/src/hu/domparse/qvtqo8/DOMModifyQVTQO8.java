@@ -27,25 +27,91 @@ import org.xml.sax.SAXException;
 
 public class DOMModifyQVTQO8 {
 
+    private static Document doc;
+
     public static void main(String argv[]) throws SAXException,
             IOException, ParserConfigurationException {
 
         File xmlFile = new File(
-                "./XMLQVTQO8.xml");
+                "D:/Egyetem/4.Év/4.ev_1.felev/Adatkezelés XML-ben/QVTQO8_XML.Gyak/XMLTaskQVTQO8/XMLQVTQO8.xml");
 
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder dBuilder = factory.newDocumentBuilder();
-        Document doc = dBuilder.parse(xmlFile);
+        doc = dBuilder.parse(xmlFile);
 
         //Második ugyfel azonosíto attributomának modositasa
-        NodeList ugyfelekList = doc.getElementsByTagName("Ugyfelek"); 
-        Node ugyfel = ugyfelekList.item(1);
-
-        ugyfel.getAttributes().getNamedItem("u_adoazonosito").setTextContent("ua2");
+        modifyUgyfelAzonosito();
         
         //---------
 
-        //Konyvelo iroda minden utca element ertekenek modositasa
+        modifyKonyveloIroda();
+
+        //---------
+
+        modifyUgyfelChildElement();
+
+        //---------
+
+        modifyNavElement();
+
+        //---------
+
+        modifyOepElement();
+
+        try (FileOutputStream output = new FileOutputStream(
+                "modified.xml")) {
+            writeXml(doc, output);
+        } catch (TransformerException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    //Element tag értékek modositasahoz metódus
+    public static void modifyElement(NodeList nodeList, String tagName, String newValue) {
+        if (nodeList != null) {
+            for (int i = 0; i < nodeList.getLength(); i++) {
+                Node node = nodeList.item(i);
+                Element elem = (Element) node;
+                try {
+                    elem.getElementsByTagName(tagName).item(0).setTextContent(newValue);
+                } catch (DOMException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
+    //Modositott xml fajl megirása
+    private static void writeXml(Document doc, OutputStream output)
+            throws TransformerException, UnsupportedEncodingException {
+
+        TransformerFactory transformerFactory = TransformerFactory.newInstance();
+
+        Transformer transformer = transformerFactory.newTransformer(
+                new StreamSource(new File("D:/Egyetem/4.Év/4.ev_1.felev/Adatkezelés XML-ben/QVTQO8_XML.Gyak/XMLTaskQVTQO8/DOMParseQVTQO8/styling.xslt")));
+
+        transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+        transformer.setOutputProperty(OutputKeys.STANDALONE, "no");
+
+        DOMSource source = new DOMSource(doc);
+        StreamResult result = new StreamResult(output);
+
+        transformer.transform(source, result);
+
+    }
+
+    private static void modifyUgyfelAzonosito() 
+    {
+         //Második ugyfel azonosíto attributomának modositasa
+         NodeList ugyfelekList = doc.getElementsByTagName("Ugyfelek"); 
+         Node ugyfel = ugyfelekList.item(1);
+ 
+         ugyfel.getAttributes().getNamedItem("u_adoazonosito").setTextContent("ua2");
+    }
+
+    private static void modifyKonyveloIroda()
+    {
         NodeList kirodaList = doc.getElementsByTagName("Konyveloiroda");
         modifyElement(kirodaList, "utca", "Abla");
 
@@ -74,79 +140,85 @@ public class DOMModifyQVTQO8 {
                 System.out.printf("%nUgyvezeto: %s%n \n", uvezeto);
             }
         }
+    }
 
-        //---------
+    private static void modifyUgyfelChildElement()
+    {
+        NodeList ugyfelekList = doc.getElementsByTagName("Ugyfelek");
+         //Gyermek email element átnevezése a 3.Ugyfelnel
+         Node ugyfelTel = ugyfelekList.item(2);
 
+         Element telefonszam = doc.createElement("telefonszam");
+         telefonszam.appendChild(doc.createTextNode("06205672543"));
+         ugyfelTel.appendChild(telefonszam);
+ 
+         //Modositott Ugyfel elem kiirasa
+         System.out.println("Ugyfel:" + ugyfelekList.item(2).getTextContent() + "\n");
+ 
+    }
 
-        //Uj gyermek element hozzáadása a 3.Ugyfel elementhez
-        Node ugyfelTel = ugyfelekList.item(2);
-
-        Element telefonszam = doc.createElement("telefonszam");
-        telefonszam.appendChild(doc.createTextNode("06205672543"));
-        ugyfelTel.appendChild(telefonszam);
-
-        //Modositott Ugyfel elem kiirasa
-        System.out.println("Ugyfel:" + ugyfelekList.item(2).getTextContent() + "\n");
-
-        //---------
-
-        //Nav element ugyintéző elementjének gyerek 'email' elementjének átnevezése
-        NodeList navList = doc.getElementsByTagName("Nav");
+    private static void modifyNavElement()
+    {
+         //Nav element ugyintéző elementjének gyerek 'email' elementjének átnevezése
+         NodeList navList = doc.getElementsByTagName("Nav");
         
-        for (int i = 0; i < navList.getLength(); i++) {
-            Node nav = navList.item(i);
+         for (int i = 0; i < navList.getLength(); i++) {
+             Node nav = navList.item(i);
+ 
+             Element elem = (Element) nav;
+ 
+             //Nav ugyintezo elementjenek lekerdezese
+             Node childs = elem.getElementsByTagName("ugyintezo").item(0);
+ 
+             //az ugyintezo element gyerek elementjeinek lekerdezese
+             NodeList childNodes = childs.getChildNodes();
+ 
+             for (int j = 0; j < childNodes.getLength(); j++) {
+ 
+                 Node item = childNodes.item(j);
+ 
+                 if (item.getNodeType() == Node.ELEMENT_NODE) {
+ 
+                     if ("email".equalsIgnoreCase(item.getNodeName())) {
+ 
+                         String email = item.getTextContent();
+ 
+                         //email element torlése
+                         childs.removeChild(item);
+ 
+                         //Uj xml element hozzáadása
+                         Element n = doc.createElement("uemail");
+                         n.appendChild(doc.createTextNode(email));
+ 
+                         childs.appendChild(n);
+ 
+                     }
+                 }
+             }
+                 //Modositott Nav elementek kiirasa
+                 Element elem1 = (Element) nav;
+ 
+                 String uid = elem1.getAttribute("n_adoszam");
+ 
+                 Node node1 = elem.getElementsByTagName("email").item(0);
+                 String email = node1.getTextContent();
+ 
+              
+                 System.out.printf("Nav: \n");
+                 System.out.printf("Adoszam: %s%n", uid);
+                 System.out.printf("Email: %s%n", email);
+                 System.out.printf("Ugyintezo:" +
+                         "%n\tUEmail::" + elem1.getElementsByTagName("uemail").item(0).getTextContent() +
+                         "%n\tTelefon:" + elem1.getElementsByTagName("telefon").item(0).getTextContent() +
+                         "%n\tNev:" + elem1.getElementsByTagName("nev").item(0).getTextContent() + "\n");
+                 System.out.printf("Nyitvatartas:" +
+                         "%n\t" + elem1.getElementsByTagName("tol").item(0).getTextContent() + "-tol." +
+                         "%n\t" + elem1.getElementsByTagName("ig").item(0).getTextContent() + "-ig." + "\n\n");
+         }
+    }
 
-            Element elem = (Element) nav;
-
-            //Nav ugyintezo elementjenek lekerdezese
-            Node childs = elem.getElementsByTagName("ugyintezo").item(0);
-
-            //az ugyintezo element gyerek elementjeinek lekerdezese
-            NodeList childNodes = childs.getChildNodes();
-
-            for (int j = 0; j < childNodes.getLength(); j++) {
-
-                Node item = childNodes.item(j);
-
-                if (item.getNodeType() == Node.ELEMENT_NODE) {
-
-                    if ("email".equalsIgnoreCase(item.getNodeName())) {
-
-                        String email = item.getTextContent();
-
-                        //email element torlése
-                        childs.removeChild(item);
-
-                        //Uj xml element hozzáadása
-                        Element n = doc.createElement("uemail");
-                        n.appendChild(doc.createTextNode(email));
-
-                        childs.appendChild(n);
-
-                    }
-                }
-            }
-                //Modositott Nav elementek kiirasa
-                Element elem1 = (Element) nav;
-
-                String uid = elem1.getAttribute("n_adoszam");
-
-                Node node1 = elem.getElementsByTagName("email").item(0);
-                String email = node1.getTextContent();
-
-             
-                System.out.printf("Nav: \n");
-                System.out.printf("Adoszam: %s%n", uid);
-                System.out.printf("Email: %s%n", email);
-                System.out.printf("Ugyintezo:" +
-                        "%n\tUEmail::" + elem1.getElementsByTagName("uemail").item(0).getTextContent() +
-                        "%n\tTelefon:" + elem1.getElementsByTagName("telefon").item(0).getTextContent() +
-                        "%n\tNev:" + elem1.getElementsByTagName("nev").item(0).getTextContent() + "\n");
-                System.out.printf("Nyitvatartas:" +
-                        "%n\t" + elem1.getElementsByTagName("tol").item(0).getTextContent() + "-tol." +
-                        "%n\t" + elem1.getElementsByTagName("ig").item(0).getTextContent() + "-ig." + "\n\n");
-        }
-
+    private static void modifyOepElement()
+    {
         //Oep email elementjének törlése
         NodeList oepList = doc.getElementsByTagName("Oep");
         
@@ -184,49 +256,5 @@ public class DOMModifyQVTQO8 {
                         "%n\t" + elem.getElementsByTagName("tol").item(0).getTextContent() + "-tol." +
                         "%n\t" + elem.getElementsByTagName("ig").item(0).getTextContent() + "-ig." + "\n\n");
         }
-
-
-
-        try (FileOutputStream output = new FileOutputStream(
-                "modified.xml")) {
-            writeXml(doc, output);
-        } catch (TransformerException e) {
-            e.printStackTrace();
-        }
-
-    }
-
-    //Element tag értékek modositasahoz metódus
-    public static void modifyElement(NodeList nodeList, String tagName, String newValue) {
-        if (nodeList != null) {
-            for (int i = 0; i < nodeList.getLength(); i++) {
-                Node node = nodeList.item(i);
-                Element elem = (Element) node;
-                try {
-                    elem.getElementsByTagName(tagName).item(0).setTextContent(newValue);
-                } catch (DOMException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-    }
-
-    //Modositott xml fajl megirása
-    private static void writeXml(Document doc, OutputStream output)
-            throws TransformerException, UnsupportedEncodingException {
-
-        TransformerFactory transformerFactory = TransformerFactory.newInstance();
-
-        Transformer transformer = transformerFactory.newTransformer(
-                new StreamSource(new File("DOMParseQVTQO8/styling.xslt")));
-
-        transformer.setOutputProperty(OutputKeys.INDENT, "yes");
-        transformer.setOutputProperty(OutputKeys.STANDALONE, "no");
-
-        DOMSource source = new DOMSource(doc);
-        StreamResult result = new StreamResult(output);
-
-        transformer.transform(source, result);
-
     }
 }
